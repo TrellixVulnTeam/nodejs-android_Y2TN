@@ -170,7 +170,7 @@ source ./android-configure ~/android-ndk-r24 arm 19
 
 Start the build phase:
 ```sh
-make
+make -j4
 ```
 
 This will create the Android `armeabi-v7a` shared library in `out/Release/lib.target/libnode.so`.

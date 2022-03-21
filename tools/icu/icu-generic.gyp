@@ -63,6 +63,11 @@
               'VCCLCompilerTool': {'RuntimeTypeInfo': 'true'},
             }
           }],
+          [ '(OS=="linux" or OS=="android") and (target_arch=="arm" or target_arch=="ia32")', {
+              'cflags': [ '-m32' ],
+              'ldflags': [ '-m32' ],
+              'asflags': [ '-32' ],
+          }],
         ],
         'msvs_settings': {
           'VCCLCompilerTool': {

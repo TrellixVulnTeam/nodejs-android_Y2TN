@@ -1694,12 +1694,12 @@ void NativeModule::UpdateCPUDuration(size_t cpu_duration, ExecutionTier tier) {
   if (tier == WasmCompilationUnit::GetBaselineExecutionTier(this->module())) {
     if (!compilation_state_->baseline_compilation_finished()) {
       baseline_compilation_cpu_duration_.fetch_add(
-          cpu_duration, std::memory_order::memory_order_relaxed);
+          cpu_duration, std::memory_order_relaxed);
     }
   } else if (tier == ExecutionTier::kTurbofan) {
     if (!compilation_state_->top_tier_compilation_finished()) {
       tier_up_cpu_duration_.fetch_add(cpu_duration,
-                                      std::memory_order::memory_order_relaxed);
+                                      std::memory_order_relaxed);
     }
   }
 }

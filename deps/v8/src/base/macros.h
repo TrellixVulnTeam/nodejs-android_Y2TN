@@ -105,14 +105,14 @@ char (&ArraySizeHelper(const T (&array)[N]))[N];
 //
 // WARNING: if Dest or Source is a non-POD type, the result of the memcpy
 // is likely to surprise you.
-template <class Dest, class Source>
+/* template <class Dest, class Source>
 V8_INLINE Dest bit_cast(Source const& source) {
   static_assert(sizeof(Dest) == sizeof(Source),
                 "source and dest must be same size");
   Dest dest;
   memcpy(&dest, &source, sizeof(dest));
   return dest;
-}
+} */
 
 // Explicitly declare the assignment operator as deleted.
 // Note: This macro is deprecated and will be removed soon. Please explicitly

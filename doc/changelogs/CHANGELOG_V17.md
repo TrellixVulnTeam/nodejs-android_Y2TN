@@ -36,8 +36,11 @@
 * \[[`000fff`](https://github.com/nodejs/node/commit/28650e)] - **common.gypi**: upgrade GYP configure to Android NDK r24
 * \[[`0000ff`](https://github.com/nodejs/node/commit/28650e)] - **android-configure**: upgrade configure to Android NDK r24
 * \[[`00000f`](https://github.com/nodejs/node/commit/28650e)] - **icu-generic.gyp**: add Armv7-A (Cortex-A7) configure
-* \[[`1fffff`](https://github.com/nodejs/node/commit/28650e)] - **deps**: V8: Removes gtest_prod.h dependency
-* \[[`10ffff`](https://github.com/nodejs/node/commit/28650e)] - **deps** V8: disable friend test
+* \[[`1fffff`](https://github.com/nodejs/node/commit/28650e)] - **V8**: C++20 migration: remove redundant namespace
+* \[[`10ffff`](https://github.com/nodejs/node/commit/28650e)] - **V8** functional.h: include bit header
+* \[[`100fff`](https://github.com/nodejs/node/commit/28650e)] - **V8** macros.h: disable V8_INLINE bit_cast()
+* \[[`1000ff`](https://github.com/nodejs/node/commit/28650e)] - **deps**: V8: Removes gtest_prod.h dependency
+* \[[`10000f`](https://github.com/nodejs/node/commit/28650e)] - **deps** V8: disable friend test
 
 <a id="17.5.0"></a>
 

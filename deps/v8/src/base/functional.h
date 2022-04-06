@@ -12,7 +12,7 @@
 #include <cstring>
 #include <functional>
 #include <utility>
-
+#include <bit>
 #include "src/base/base-export.h"
 #include "src/base/macros.h"
 

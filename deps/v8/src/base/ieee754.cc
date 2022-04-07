@@ -52,6 +52,7 @@ namespace {
 /* Get two 32 bit ints from a double.  */
 
 #define EXTRACT_WORDS(ix0, ix1, d)         \
+  using namespace std;                     \
   do {                                     \
     uint64_t bits = bit_cast<uint64_t>(d); \
     (ix0) = bits >> 32;                    \
@@ -61,6 +62,7 @@ namespace {
 /* Get the more significant 32 bit int from a double.  */
 
 #define GET_HIGH_WORD(i, d)                \
+  using namespace std;                     \
   do {                                     \
     uint64_t bits = bit_cast<uint64_t>(d); \
     (i) = bits >> 32;                      \
@@ -69,6 +71,7 @@ namespace {
 /* Get the less significant 32 bit int from a double.  */
 
 #define GET_LOW_WORD(i, d)                 \
+  using namespace std;                     \
   do {                                     \
     uint64_t bits = bit_cast<uint64_t>(d); \
     (i) = bits & 0xFFFFFFFFu;              \
@@ -77,6 +80,7 @@ namespace {
 /* Set a double from two 32 bit ints.  */
 
 #define INSERT_WORDS(d, ix0, ix1)             \
+  using namespace std;                     \
   do {                                        \
     uint64_t bits = 0;                        \
     bits |= static_cast<uint64_t>(ix0) << 32; \
@@ -87,6 +91,7 @@ namespace {
 /* Set the more significant 32 bits of a double from an int.  */
 
 #define SET_HIGH_WORD(d, v)                 \
+  using namespace std;                     \
   do {                                      \
     uint64_t bits = bit_cast<uint64_t>(d);  \
     bits &= 0x0000'0000'FFFF'FFFF;          \
@@ -97,6 +102,7 @@ namespace {
 /* Set the less significant 32 bits of a double from an int.  */
 
 #define SET_LOW_WORD(d, v)                 \
+  using namespace std;                     \
   do {                                     \
     uint64_t bits = bit_cast<uint64_t>(d); \
     bits &= 0xFFFF'FFFF'0000'0000;         \
@@ -2327,6 +2333,7 @@ double expm1(double x) {
 }
 
 double cbrt(double x) {
+  using namespace std;
   static const uint32_t
       B1 = 715094163, /* B1 = (1023-1023/3-0.03306235651)*2**20 */
       B2 = 696219795; /* B2 = (1023-1023/3-54/3-0.03306235651)*2**20 */

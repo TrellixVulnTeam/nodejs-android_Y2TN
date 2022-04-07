@@ -240,7 +240,7 @@ inline bool SignedAddOverflow32(int32_t lhs, int32_t rhs, int32_t* val) {
   return __builtin_sadd_overflow(lhs, rhs, val);
 #else
   uint32_t res = static_cast<uint32_t>(lhs) + static_cast<uint32_t>(rhs);
-  *val = std::bit_cast<int32_t>(res);
+  *val = std::bit_cast<std::int32_t>(res);
   return ((res ^ lhs) & (res ^ rhs) & (1U << 31)) != 0;
 #endif
 }
@@ -254,7 +254,7 @@ inline bool SignedSubOverflow32(int32_t lhs, int32_t rhs, int32_t* val) {
   return __builtin_ssub_overflow(lhs, rhs, val);
 #else
   uint32_t res = static_cast<uint32_t>(lhs) - static_cast<uint32_t>(rhs);
-  *val = std::bit_cast<int32_t>(res);
+  *val = std::bit_cast<std::int32_t>(res);
   return ((res ^ lhs) & (res ^ ~rhs) & (1U << 31)) != 0;
 #endif
 }
@@ -269,7 +269,7 @@ V8_BASE_EXPORT bool SignedMulOverflow32(int32_t lhs, int32_t rhs, int32_t* val);
 // returns true if the signed summation resulted in an overflow.
 inline bool SignedAddOverflow64(int64_t lhs, int64_t rhs, int64_t* val) {
   uint64_t res = static_cast<uint64_t>(lhs) + static_cast<uint64_t>(rhs);
-  *val = std::bit_cast<int64_t>(res);
+  *val = std::bit_cast<std::int64_t>(res);
   return ((res ^ lhs) & (res ^ rhs) & (1ULL << 63)) != 0;
 }
 
@@ -279,7 +279,7 @@ inline bool SignedAddOverflow64(int64_t lhs, int64_t rhs, int64_t* val) {
 // returns true if the signed subtraction resulted in an overflow.
 inline bool SignedSubOverflow64(int64_t lhs, int64_t rhs, int64_t* val) {
   uint64_t res = static_cast<uint64_t>(lhs) - static_cast<uint64_t>(rhs);
-  *val = std::bit_cast<int64_t>(res);
+  *val = std::bit_cast<std::int64_t>(res);
   return ((res ^ lhs) & (res ^ ~rhs) & (1ULL << 63)) != 0;
 }
 

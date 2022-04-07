@@ -7,6 +7,8 @@
 
 #include <unordered_set>
 #include <vector>
+#include <bit>
+#include <cstdint>
 
 #include "src/base/base-export.h"
 #include "src/base/macros.h"

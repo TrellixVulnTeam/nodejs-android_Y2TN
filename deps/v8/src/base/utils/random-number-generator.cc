@@ -118,6 +118,7 @@ double RandomNumberGenerator::NextDouble() {
 
 
 int64_t RandomNumberGenerator::NextInt64() {
+  using namespace std;
   XorShift128(&state0_, &state1_);
   return bit_cast<int64_t>(state0_ + state1_);
 }
@@ -218,6 +219,7 @@ int RandomNumberGenerator::Next(int bits) {
 
 
 void RandomNumberGenerator::SetSeed(int64_t seed) {
+  using namespace std;
   initial_seed_ = seed;
   state0_ = MurmurHash3(bit_cast<uint64_t>(seed));
   state1_ = MurmurHash3(~state0_);

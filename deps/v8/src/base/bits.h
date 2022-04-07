@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include <type_traits>
+#include <bit>
 
 #include "src/base/base-export.h"
 #include "src/base/macros.h"

@@ -7,7 +7,7 @@
 
 #include <limits>
 #include <type_traits>
-
+#include <bit>
 #include "src/base/compiler-specific.h"
 #include "src/base/logging.h"
 #include "src/base/platform/wrappers.h"

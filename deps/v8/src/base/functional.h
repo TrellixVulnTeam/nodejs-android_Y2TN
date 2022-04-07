@@ -65,7 +65,6 @@ namespace base {
 template <typename>
 struct hash;
 
-
 V8_INLINE size_t hash_combine() { return 0u; }
 V8_INLINE size_t hash_combine(size_t seed) { return seed; }
 V8_BASE_EXPORT size_t hash_combine(size_t seed, size_t value);
@@ -73,7 +72,6 @@ template <typename T, typename... Ts>
 V8_INLINE size_t hash_combine(T const& v, Ts const&... vs) {
   return hash_combine(hash_combine(vs...), hash<T>()(v));
 }
-
 
 template <typename Iterator>
 V8_INLINE size_t hash_range(Iterator first, Iterator last) {
@@ -83,7 +81,6 @@ V8_INLINE size_t hash_range(Iterator first, Iterator last) {
   }
   return seed;
 }
-
 
 #define V8_BASE_HASH_VALUE_TRIVIAL(type) \
   V8_INLINE size_t hash_value(type v) { return static_cast<size_t>(v); }
@@ -129,6 +126,7 @@ V8_INLINE size_t hash_value(T (&v)[N]) {
 
 template <typename T>
 V8_INLINE size_t hash_value(T* const& v) {
+  using namespace std;
   return hash_value(bit_cast<uintptr_t>(v));
 }
 

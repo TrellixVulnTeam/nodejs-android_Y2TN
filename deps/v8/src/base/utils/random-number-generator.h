@@ -110,6 +110,7 @@ class V8_BASE_EXPORT RandomNumberGenerator final {
   // Static and exposed for external use.
   static inline double ToDouble(uint64_t state0) {
     // Exponent for double values for [1.0 .. 2.0)
+	using namespace std;
     static const uint64_t kExponentBits = uint64_t{0x3FF0000000000000};
     uint64_t random = (state0 >> 12) | kExponentBits;
     return bit_cast<double>(random) - 1;

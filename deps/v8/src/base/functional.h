@@ -95,6 +95,7 @@ V8_BASE_EXPORT size_t hash_value(unsigned long long);  // NOLINT(runtime/int)
 
 #define V8_BASE_HASH_VALUE_SIGNED(type)            \
   V8_INLINE size_t hash_value(signed type v) {     \
+    using namespace std;                           \
     return hash_value(bit_cast<unsigned type>(v)); \
   }
 V8_BASE_HASH_VALUE_SIGNED(char)
@@ -106,11 +107,13 @@ V8_BASE_HASH_VALUE_SIGNED(long long)  // NOLINT(runtime/int)
 
 V8_INLINE size_t hash_value(float v) {
   // 0 and -0 both hash to zero.
+  using namespace std;
   return v != 0.0f ? hash_value(bit_cast<uint32_t>(v)) : 0;
 }
 
 V8_INLINE size_t hash_value(double v) {
   // 0 and -0 both hash to zero.
+  using namespace std;
   return v != 0.0 ? hash_value(bit_cast<uint64_t>(v)) : 0;
 }
 
@@ -204,12 +207,14 @@ V8_BASE_BIT_SPECIALIZE_TRIVIAL(unsigned long long)  // NOLINT(runtime/int)
   template <>                                              \
   struct bit_equal_to<type> {                              \
     V8_INLINE bool operator()(type lhs, type rhs) const {  \
+      using namespace std;                                 \
       return bit_cast<btype>(lhs) == bit_cast<btype>(rhs); \
     }                                                      \
   };                                                       \
   template <>                                              \
   struct bit_hash<type> {                                  \
     V8_INLINE size_t operator()(type v) const {            \
+      using namespace std;                                 \
       hash<btype> h;                                       \
       return h(bit_cast<btype>(v));                        \
     }                                                      \

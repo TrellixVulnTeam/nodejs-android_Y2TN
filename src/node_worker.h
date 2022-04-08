@@ -85,7 +85,7 @@ class Worker : public AsyncWrap {
   {
     using namespace std;
     optional<uv_thread_t> tid_; // Set while the thread is running
-  }
+  };
 
   std::unique_ptr<InspectorParentHandle> inspector_parent_handle_;
 

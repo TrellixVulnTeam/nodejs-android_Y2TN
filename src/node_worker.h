@@ -21,6 +21,8 @@ enum ResourceLimits {
   kTotalResourceLimitCount
 };
 
+using namespace std;
+
 // A worker thread, as represented in its parent thread.
 class Worker : public AsyncWrap {
  public:
@@ -82,10 +84,7 @@ class Worker : public AsyncWrap {
 
   MultiIsolatePlatform* platform_;
   v8::Isolate* isolate_ = nullptr;
-  {
-    using namespace std;
-    optional<uv_thread_t> tid_; // Set while the thread is running
-  };
+  optional<uv_thread_t> tid_; // Set while the thread is running
 
   std::unique_ptr<InspectorParentHandle> inspector_parent_handle_;
 

@@ -72,7 +72,8 @@ class Worker : public AsyncWrap {
 
  private:
   bool CreateEnvMessagePort(Environment* env);
-  static size_t NearHeapLimit(void* data, size_t current_heap_limit,
+  static size_t NearHeapLimit(void* data,
+                              size_t current_heap_limit,
                               size_t initial_heap_limit);
 
   std::shared_ptr<PerIsolateOptions> per_isolate_opts_;
@@ -81,7 +82,10 @@ class Worker : public AsyncWrap {
 
   MultiIsolatePlatform* platform_;
   v8::Isolate* isolate_ = nullptr;
-  std::optional<uv_thread_t> tid_;  // Set while the thread is running
+  {
+    using namespace std;
+    optional<uv_thread_t> tid_; // Set while the thread is running
+  }
 
   std::unique_ptr<InspectorParentHandle> inspector_parent_handle_;
 
@@ -140,6 +144,5 @@ bool Worker::RequestInterrupt(Fn&& cb) {
 }  // namespace node
 
 #endif  // defined(NODE_WANT_INTERNALS) && NODE_WANT_INTERNALS
-
 
 #endif  // SRC_NODE_WORKER_H_

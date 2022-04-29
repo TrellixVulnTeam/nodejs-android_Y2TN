@@ -391,7 +391,7 @@
           [ 'target_arch=="x64" or target_arch=="arm64"', {
             'cflags': [ '-m64' ],
             'ldflags': [ '-m64' ],
-            'libraries': ['>(node_root_dir)/bin/arm64-v8a/libnode.so'],
+            'libraries': ['~/nodejs-android/bin/arm64-v8a/libnode.so'],
           }],
           [ 'OS=="solaris"', {
             'cflags': [ '-pthreads' ],

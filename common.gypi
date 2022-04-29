@@ -388,14 +388,6 @@
           }],
         ],
         'conditions': [
-          [ 'target_arch=="arm" or target_arch=="ia32"', {
-            'cflags': [ '-m32' ],
-            'ldflags': [ '-m32' ],
-          }],
-          [ 'target_arch=="x32"', {
-            'cflags': [ '-mx32' ],
-            'ldflags': [ '-mx32' ],
-          }],
           [ 'target_arch=="x64"', {
             'cflags': [ '-m64' ],
             'ldflags': [ '-m64' ],
@@ -453,6 +445,27 @@
           ['_toolset=="host"', {
             'cflags': [ '-pthread' ],
             'ldflags': [ '-pthread' ],
+          }],
+          ['_type=="loadable_module"', {
+            'conditions': [
+              # While loading a native node module, Android needs to have a
+              # (NEEDED) entry for libnode.so, or it won't be able to locate
+              # referenced symbols.
+              # We link to the binary libraries that are distributed with the
+              # nodejs-mobile headers so the (NEEDED) entry is created
+              [ 'target_arch=="arm"', {
+                'libraries': ['>(node_root_dir)/bin/armeabi-v7a/libnode.so'],
+              }],
+              [ 'target_arch=="arm64"', {
+                'libraries': ['>(node_root_dir)/bin/arm64-v8a/libnode.so'],
+              }],
+              [ 'target_arch=="x86"', {
+                'libraries': ['>(node_root_dir)/bin/x86/libnode.so'],
+              }],
+              [ 'target_arch=="x86_64"', {
+                'libraries': ['>(node_root_dir)/bin/x86_64/libnode.so'],
+              }],
+            ],
           }],
         ],
       }],

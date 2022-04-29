@@ -160,7 +160,7 @@ Run the `android-configure` script to configure the build with the path to the d
 ```sh
 chmod +x android-configure configure configure.py
 pip install Jinja2
-source ./android-configure ~/android-ndk-r24 arm 19
+source ./android-configure ~/android-ndk-r24 arm64 21
 ```
 
 Start the build phase:
@@ -168,7 +168,7 @@ Start the build phase:
 make -j4
 ```
 
-This will create the Android `armeabi-v7a` shared library in `out/Release/lib.target/libnode.so`.
+This will create the Android `arm64-v8a` shared library in `out/Release/lib.target/libnode.so`.
 
 ## Security
 

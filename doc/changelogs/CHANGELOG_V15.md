@@ -38,6 +38,13 @@
 * \[[`0000ff`](https://github.com/nodejs/node/commit/28650e)] - **android-configure**: upgrade configure to Android NDK r24
 * \[[`00000f`](https://github.com/nodejs/node/commit/28650e)] - **icu-generic.gyp**: add Armv7-A (Cortex-A7) configure
 * \[[`1fffff`](https://github.com/nodejs/node/commit/28650e)] - **deps**: upgrade npm to 8.8.0
+* \[[`4579400`](https://github.com/johnnkp/nodejs-android/commit/4579400c20ba4039b7b08c069376a58baf5adb74)] - **node-lint-md-cli-rollup**: Dependabot: delete package-lock.json
+* \[[`2d94950`](https://github.com/johnnkp/nodejs-android/commit/2d94950b75160c9761d0599595926c15cca02df9)] - **node-doc-generator**: Dependabot: delete package-lock.json
+* \[[`0b301a0`](https://github.com/johnnkp/nodejs-android/commit/0b301a0a87c9c6a4112847170ed9654d913f454c)] - **node-doc-generator**: Dependabot: freeze remark-html version to 15.0.1
+* \[[`0b6974d`](https://github.com/johnnkp/nodejs-android/commit/0b6974daabf5ee84df5ab381b512ffb163525ceb)] - **node-core-clang-format**: Dependabot: delete package-lock.json
+* \[[`eff298c`](https://github.com/johnnkp/nodejs-android/commit/eff298c64ae145f82c833dfe2dd0f6bb815d7690)] - **build**: support Python 3.10.0
+* \[[`cdb53ad`](https://github.com/johnnkp/nodejs-android/commit/cdb53ada41e9ea37f061d8c03f8a14f93f2cb6aa)] - **V8**: use collections.abc
+* \[[`619ae79`](https://github.com/johnnkp/nodejs-android/commit/619ae79ae0e08bdd2c6271890f689d44ea5c55a4)] - **inspector_protocol**: use collections.abc
 
 <a id="15.10.0"></a>
 ## 2021-02-23, Version 15.10.0 (Current), @BethGriggs
